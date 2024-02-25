@@ -4,17 +4,19 @@ import Accordion from "./components/Accordion/Accordion";
 import {Rating, RatingType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
 import {UncontrolledRating} from "./components/Rating/UncontrolledRating";
+import UncontrolledAccordion from "./components/Accordion/UncontrolledAccordion";
 
 function App() {
   const [ratingValue, setRatingValue] = useState<RatingType>(0)
+  const [collapsedAccordion, setCollapsedAccordion] = useState<boolean>(true)
   return (
     <div>
       <PageTitle text={'Title'}/>
 
       <OnOff />
 
-      <Accordion titleValue={'Accordion 1'}/>
-      <Accordion titleValue={'Accordion 2'} />
+      <Accordion collapsed={collapsedAccordion} onClick={() => setCollapsedAccordion(!collapsedAccordion)} titleValue={'Accordion 1'}/>
+      <UncontrolledAccordion titleValue={'Accordion 2'} />
       Article 2
       <Rating value={ratingValue} onClick={setRatingValue}/>
 
