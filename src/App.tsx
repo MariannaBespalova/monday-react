@@ -3,6 +3,7 @@ import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import {Rating, RatingType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
+import {UncontrolledRating} from "./components/Rating/UncontrolledRating";
 
 function App() {
   const [ratingValue, setRatingValue] = useState<RatingType>(0)
@@ -16,6 +17,9 @@ function App() {
       <Accordion titleValue={'Accordion 2'} />
       Article 2
       <Rating value={ratingValue} onClick={setRatingValue}/>
+
+      Uncontrolled
+      <UncontrolledRating />
 
     </div>
   );
