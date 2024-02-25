@@ -11,3 +11,43 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.button {
+    background: white;
+    border: 2px solid grey;
+    font-size: 30px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.button.button-on {
+    background-color: green;
+}
+
+.button.button-off {
+    background-color: red;
+}
+
+.onOff-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.btn-wrap {
+    margin-right: 20px;
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid grey;
+}
+
+.circle.on {
+    background-color: green;
+}
+
+.circle.off {
+    background-color: red;
+}
