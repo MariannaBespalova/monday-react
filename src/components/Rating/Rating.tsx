@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 
 export type RatingType = 0 | 1 | 2 | 3 | 4 | 5
 
@@ -21,7 +21,7 @@ export function Rating(props: RatingPropsType) {
 
 type StarPropsType = {
   selected: boolean
-  value: 0 | 1 | 2 | 3 | 4 | 5
+  value: RatingType
   setValue: (number: RatingType) => void
 }
 
