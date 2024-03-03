@@ -9,11 +9,14 @@ import UncontrolledAccordion from "./components/Accordion/UncontrolledAccordion"
 function App() {
   const [ratingValue, setRatingValue] = useState<RatingType>(0)
   const [collapsedAccordion, setCollapsedAccordion] = useState<boolean>(true)
+  const [onClicked, setOnClicked] = useState<boolean>(false)
+
+
   return (
     <div>
       <PageTitle text={'Title'}/>
 
-      <OnOff />
+      <OnOff onClicked={onClicked} onClick={(onClicked) => setOnClicked(onClicked)} />
 
       <Accordion collapsed={collapsedAccordion} onClick={() => setCollapsedAccordion(!collapsedAccordion)} titleValue={'Accordion 1'}/>
       <UncontrolledAccordion titleValue={'Accordion 2'} />

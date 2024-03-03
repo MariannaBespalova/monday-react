@@ -2,14 +2,14 @@ import React from "react";
 
 type AccordionPropsType = {
   titleValue: string,
-  onClick: (t:boolean) => void
+  onClick: () => void
   collapsed: boolean
 }
 
 function Accordion(props: AccordionPropsType) {
   return (
       <div>
-        <AccordionTitle title={props.titleValue} onClick={() => props.onClick(props.collapsed)} />
+        <AccordionTitle title={props.titleValue} onClick={() => props.onClick()} />
         {props.collapsed && <AccordionBody/>}
       </div>
     )

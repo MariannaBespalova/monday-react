@@ -1,20 +1,25 @@
-import {useState} from "react";
 
-export const OnOff = () => {
-  const [onClicked, setOnClicked] = useState<boolean | null>(null)
+
+type OnOffPropsType = {
+  onClicked: boolean
+  onClick: (t: boolean) => void
+}
+
+export const OnOff = (props: OnOffPropsType) => {
+
   const btnOnClick = () => {
-    setOnClicked(true)
+    props.onClick(true)
   }
   const btnOffClick = () => {
-    setOnClicked(false)
+    props.onClick(false)
   }
   return(
     <div className="onOff-wrap">
       <div className="btn-wrap">
-        <button onClick={btnOnClick} className={onClicked ? "button button-on" : "button"}>On</button>
-        <button onClick={btnOffClick} className={!onClicked ? "button button-off" : "button"}>Off</button>
+        <button onClick={btnOnClick} className={props.onClicked ? "button button-on" : "button"}>On</button>
+        <button onClick={btnOffClick} className={!props.onClicked ? "button button-off" : "button"}>Off</button>
       </div>
-      <div className={onClicked ? "circle on" : "circle off"}/>
+      <div className={props.onClicked ? "circle on" : "circle off"}/>
     </div>
   )
 }
