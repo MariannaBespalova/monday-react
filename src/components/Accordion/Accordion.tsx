@@ -10,7 +10,7 @@ function Accordion(props: AccordionPropsType) {
   return (
       <div>
         <AccordionTitle title={props.titleValue} onClick={() => props.onClick()} />
-        {props.collapsed && <AccordionBody/>}
+        {!props.collapsed && <AccordionBody/>}
       </div>
     )
 }
